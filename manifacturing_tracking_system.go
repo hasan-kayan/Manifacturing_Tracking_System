@@ -39,13 +39,15 @@ func main() {
 	fmt.Println("Fabrikanız Hazırlanıyor...")
 	progressBar()
 	structOfContents()
+	// sadece bir kere kullanilan fonksiyonlar mainin icinde islem olarak acilirsa daha guzel olur (Amca kizar)
 
 }
-func factorySize() {
-	var factorySizeScan string
+func factorySize() { // farkli girdirlerde error aliniyor duzenlenebilir, error vermesini veya 0 degeri cikarmasini engelleyerek tekrar kullanicidan veri alinmali
+	var factorySizeScan string 
 	var factorySize int
 	var numberOfWorkers int
 	fmt.Println("Fabrikanızın boyutununu giriniz.[küçük , orta , büyük ]")
+	// Fabrika boyutlari kullanicidan alinirken belli calisan sayisi araliklari ve metre kare degerleri alinip sonra if de islenebilir
 	fmt.Scanf("%s", &factorySizeScan)
 	if factorySizeScan == "küçük" {
 		numberOfWorkers = 5
@@ -70,7 +72,8 @@ func progressBar() {
 }
 
 func structOfContents() {
-	furniture1 := []furniture{
+	furniture1 := []furniture{ // kullanici default olarak gelen mobilyalari ozellestirmemis 
+		// hazir setler kisminda bu yapiyi kullanalim ama bu asamada kullanici mobilya ozelliklerini kendi girdigi halini eklememiz gerekiyor 
 		{
 			name:                           "Seat",
 			id:                             0,
